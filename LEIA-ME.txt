@@ -1,0 +1,69 @@
+MULHÉ STUDIO · LEIA-ME
+======================
+
+O QUE É
+Site com a identidade da Mulhé, psicologia com sotaque: logo, cores, tipografia,
+elementos bordados, padrões, adesivos, posters, peças para redes, vinheta e a
+apresentação do projeto. Tudo pode ser visto e baixado.
+
+Página inicial: index.html (abre em seu-endereco/#/inicio)
+Funciona sem servidor especial e sem internet externa: fontes, imagens e
+código estão dentro da pasta assets/. Dá para abrir o index.html com dois
+cliques. Só o botão "Baixar .zip" pede o site publicado.
+
+
+ESTRUTURA
+index.html              página única do site (navegação por #/endereço)
+assets/css/site.css     estilos
+assets/js/site.js       páginas, textos e ferramentas do site
+assets/js/dados.js      lista das peças e arquivos (gerada)
+assets/js/mulhe-bordado.js   o motor do bordado (logo, cobra, gotas, texto)
+assets/fonts/           Caprasimo e Figtree para o site
+assets/img/             miniaturas, favicon e imagem de compartilhamento
+assets/baixar/          TODOS os arquivos para baixar, por pasta:
+   logo/ elementos/ padroes/ adesivos/ posters/ redes/ vinheta/ slides/
+   fontes/ referencias/
+
+A APRESENTAÇÃO
+assets/baixar/slides/mulhe-apresentacao.html   abre em qualquer navegador
+assets/baixar/slides/mulhe-apresentacao.pdf    o mesmo deck em PDF
+No HTML: setas ou clique passam os slides, F abre em tela cheia.
+
+
+COMO PUBLICAR NO GITHUB PAGES
+1. Crie um repositório público no GitHub (ex.: mulhe-studio).
+2. No Terminal, dentro desta pasta (a que tem o index.html):
+     git init
+     git add .
+     git commit -m "Mulhé Studio V.1"
+     git branch -M main
+     git remote add origin https://github.com/SEU-USUARIO/mulhe-studio.git
+     git push -u origin main
+   (Pelo site do GitHub também dá, mas ele aceita no máximo 100 arquivos por
+   vez: suba pasta por pasta.)
+3. No repositório: Settings > Pages > Source: "Deploy from a branch",
+   Branch: main, pasta / (root) > Save.
+4. Em um ou dois minutos o site abre em
+   https://SEU-USUARIO.github.io/mulhe-studio/
+
+Depois de publicar, troque no index.html a linha
+  <meta property="og:image" content="assets/img/og.jpg">
+pelo endereço completo, ex.:
+  <meta property="og:image" content="https://SEU-USUARIO.github.io/mulhe-studio/assets/img/og.jpg">
+Assim a imagem aparece quando o link é colado no WhatsApp.
+
+
+COMO ATUALIZAR
+Suba a PASTA INTEIRA de novo (git add . / commit / push). Não troque arquivos
+soltos: dados.js aponta para os arquivos de assets/baixar/ e as versões
+precisam bater.
+
+
+ONDE MUDAR A VERSÃO
+Arquivo assets/js/site.js, linha do começo:
+  var SITE = { nome: 'Mulhé Studio', versao: 'V.1 · novembro de 2026' };
+
+
+FONTES
+Caprasimo e Figtree são gratuitas (licença OFL, em assets/baixar/fontes/).
+As duas existem no Google Fonts, no Canva e no Google Slides.
